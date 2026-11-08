@@ -1,24 +1,18 @@
 package practice5;
-
 import java.util.Scanner;
 import practice5.cloning.CloningDemo;
 import practice5.task1.GenericsDemo;
 import practice5.task2.StackDemo;
-
-/** Главное меню практической работы №5. */
 public final class Main {
     private Main() {
     }
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
-
         while (running) {
             printMenu();
             System.out.print("Выберите пункт: ");
             String input = scanner.nextLine().trim();
-
             try {
                 int choice = Integer.parseInt(input);
                 switch (choice) {
@@ -68,7 +62,6 @@ public final class Main {
             } catch (RuntimeException ex) {
                 System.out.println("Ошибка выполнения: " + ex.getMessage());
             }
-
             if (running) {
                 System.out.println("\nНажмите Enter, чтобы вернуться в меню...");
                 scanner.nextLine();
@@ -76,7 +69,6 @@ public final class Main {
         }
         scanner.close();
     }
-
     private static void printMenu() {
         System.out.println("============================================");
         System.out.println("     ПРАКТИЧЕСКАЯ РАБОТА №5 — JAVA");

@@ -1,13 +1,8 @@
 package practice5.cloning;
-
 import java.util.Scanner;
-
-/** Демонстрации MyStack, глубокого копирования и клонирования House. */
 public final class CloningDemo {
     private CloningDemo() {
     }
-
-    /** Клиент MyStack: ввод пяти строк и вывод в обратном порядке. */
     public static void runCompositionClient(Scanner scanner) {
         System.out.println("\nMyStack на основе композиции");
         MyStack<String> stack = new MyStack<String>();
@@ -17,8 +12,6 @@ public final class CloningDemo {
             System.out.println(stack.pop());
         }
     }
-
-    /** Клиент варианта MyStack, построенного наследованием от ArrayList. */
     public static void runInheritanceClient(Scanner scanner) {
         System.out.println("\nMyStackInherited на основе наследования");
         MyStackInherited<String> stack = new MyStackInherited<String>();
@@ -28,7 +21,6 @@ public final class CloningDemo {
             System.out.println(stack.pop());
         }
     }
-
     private static void readFiveStrings(Scanner scanner,
                                         java.util.function.Consumer<String> consumer) {
         for (int i = 1; i <= 5; i++) {
@@ -36,14 +28,11 @@ public final class CloningDemo {
             consumer.accept(scanner.nextLine());
         }
     }
-
-    /** Проверяет, что список скопирован, а изменяемые элементы не разделяют ссылки. */
     public static void demonstrateDeepCopyOfMyStack() {
         System.out.println("\nГлубокое копирование MyStack");
         MyStack<House> original = new MyStack<House>();
         original.push(new House(1, 1750.50));
         original.push(new House(2, 2300.00));
-
         MyStack<House> copy = original.clone();
         System.out.println("Исходный стек: " + original);
         System.out.println("Копия стека:   " + copy);
@@ -52,20 +41,16 @@ public final class CloningDemo {
                 + (original.peek() != copy.peek()));
         System.out.println("Date у первого House — разные объекты: "
                 + (original.peek().getWhenBuilt() != copy.peek().getWhenBuilt()));
-
         MyStack<String> strings = new MyStack<String>();
         strings.push("Java");
         MyStack<String> stringsCopy = strings.clone();
         System.out.println("Копия стека строк: " + stringsCopy);
     }
-
-    /** Сравнивает поверхностное и глубокое клонирование House. */
     public static void demonstrateHouseCloning() {
         System.out.println("\nПоверхностное и глубокое клонирование House");
         House original = new House(1, 1750.50);
         House shallow = original.shallowClone();
         House deep = original.clone();
-
         System.out.println("Исходный и shallow — разные House: " + (original != shallow));
         System.out.println("Date у исходного и shallow общая: "
                 + (original.getWhenBuilt() == shallow.getWhenBuilt()));

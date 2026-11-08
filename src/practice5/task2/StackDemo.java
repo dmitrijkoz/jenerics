@@ -1,12 +1,8 @@
 package practice5.task2;
-
 import java.util.Scanner;
-
-/** Консольные демонстрации двух реализаций GenericStack. */
 public final class StackDemo {
     private StackDemo() {
     }
-
     public static void demonstrateArrayStack() {
         System.out.println("\n2.1. GenericStack на динамическом массиве");
         GenericStack<Integer> stack = new GenericStack<Integer>(2);
@@ -22,8 +18,6 @@ public final class StackDemo {
         System.out.println("Удалённый элемент (pop): " + stack.pop());
         System.out.println("После pop: " + stack);
     }
-
-    /** Запрашивает ровно пять строк и печатает их в обратном порядке. */
     public static void runArrayListInheritanceClient(Scanner scanner) {
         System.out.println("\n2.2. Стек, наследующий ArrayList");
         ArrayListStack<String> stack = new ArrayListStack<String>();
@@ -33,7 +27,6 @@ public final class StackDemo {
             System.out.println(stack.pop());
         }
     }
-
     public static void readFiveStrings(Scanner scanner,
                                       java.util.function.Consumer<String> consumer) {
         for (int i = 1; i <= 5; i++) {

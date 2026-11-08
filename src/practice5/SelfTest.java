@@ -1,5 +1,4 @@
 package practice5;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import practice5.cloning.House;
@@ -9,12 +8,9 @@ import practice5.task1.Circle;
 import practice5.task1.GenericsTasks;
 import practice5.task2.ArrayListStack;
 import practice5.task2.GenericStack;
-
-/** Самостоятельная проверка всех ключевых методов без внешних библиотек. */
 public final class SelfTest {
     private SelfTest() {
     }
-
     public static void runAll() {
         int passed = 0;
         passed += testRemoveDuplicates();
@@ -28,7 +24,6 @@ public final class SelfTest {
         passed += testHouseClone();
         System.out.println("\nПроверки завершены: " + passed + "/9 успешно.");
     }
-
     private static int testRemoveDuplicates() {
         ArrayList<Integer> source = new ArrayList<Integer>(
                 Arrays.asList(1, 2, 1, 3, 2));
@@ -36,27 +31,23 @@ public final class SelfTest {
         check(result.equals(Arrays.asList(1, 2, 3)), "removeDuplicates");
         return 1;
     }
-
     private static int testLinearSearch() {
         Integer[] values = {4, 8, 12, 8};
         check(GenericsTasks.linearSearch(values, 12) == 2, "linearSearch: найден");
         check(GenericsTasks.linearSearch(values, 99) == -1, "linearSearch: не найден");
         return 1;
     }
-
     private static int testLargestCircle() {
         Circle[] circles = {new Circle(1), new Circle(5), new Circle(3)};
         check(GenericsTasks.findLargest(circles).getRadius() == 5.0,
                 "findLargest(Circle[])");
         return 1;
     }
-
     private static int testLargest2D() {
         Integer[][] values = {{1, 7}, {3}, {2, 9, 4}};
         check(GenericsTasks.findLargest(values) == 9, "findLargest(T[][])");
         return 1;
     }
-
     private static int testDynamicArrayStack() {
         GenericStack<Integer> stack = new GenericStack<Integer>(1);
         stack.push(10);
@@ -66,7 +57,6 @@ public final class SelfTest {
         check(stack.pop() == 30 && stack.peek() == 20, "LIFO для GenericStack");
         return 1;
     }
-
     private static int testArrayListStack() {
         ArrayListStack<String> stack = new ArrayListStack<String>();
         stack.push("A");
@@ -75,7 +65,6 @@ public final class SelfTest {
                 "ArrayListStack");
         return 1;
     }
-
     private static int testMyStackComposition() {
         MyStack<String> stack = new MyStack<String>();
         stack.push("first");
@@ -84,7 +73,6 @@ public final class SelfTest {
                 "MyStack composition");
         return 1;
     }
-
     private static int testMyStackInheritance() {
         MyStackInherited<String> stack = new MyStackInherited<String>();
         stack.push("first");
@@ -93,7 +81,6 @@ public final class SelfTest {
                 "MyStack inheritance");
         return 1;
     }
-
     private static int testHouseClone() {
         House original = new House(1, 150.0);
         House copy = original.clone();
@@ -101,7 +88,6 @@ public final class SelfTest {
         check(original.getWhenBuilt() != copy.getWhenBuilt(),
                 "House clone copies Date deeply");
         check(original.compareTo(copy) == 0, "House compareTo");
-
         MyStack<House> stack = new MyStack<House>();
         stack.push(original);
         MyStack<House> stackCopy = stack.clone();
@@ -110,7 +96,6 @@ public final class SelfTest {
                 "MyStack deep copy of nested Date");
         return 1;
     }
-
     private static void check(boolean condition, String testName) {
         if (!condition) {
             throw new AssertionError("Проверка не пройдена: " + testName);

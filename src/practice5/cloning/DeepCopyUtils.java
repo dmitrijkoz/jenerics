@@ -1,17 +1,8 @@
 package practice5.cloning;
-
 import java.util.Date;
-
-/** Вспомогательные правила глубокого копирования элементов стека. */
 public final class DeepCopyUtils {
     private DeepCopyUtils() {
     }
-
-    /**
-     * Копирует поддерживаемые типы.
-     * Неизменяемые типы (например, String и обёртки чисел) безопасно переиспользуются.
-     * Для собственного изменяемого класса реализуйте DeepCopyable.
-     */
     @SuppressWarnings("unchecked")
     public static <T> T copy(T value) {
         if (value == null || isImmutable(value.getClass())) {
@@ -30,7 +21,6 @@ public final class DeepCopyUtils {
                 "Нельзя глубоко скопировать тип " + value.getClass().getName()
                 + ". Реализуйте DeepCopyable<T> для этого класса.");
     }
-
     private static boolean isImmutable(Class<?> type) {
         return type == String.class
                 || type == Boolean.class
@@ -43,7 +33,6 @@ public final class DeepCopyUtils {
                 || type == Character.class
                 || type.isEnum();
     }
-
     private static Object copyArray(Object source) {
         int length = java.lang.reflect.Array.getLength(source);
         Class<?> componentType = source.getClass().getComponentType();

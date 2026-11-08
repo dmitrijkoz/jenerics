@@ -1,20 +1,15 @@
 package practice5.task1;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-
-/** Демонстрация четырёх пунктов задания №1. */
 public final class GenericsDemo {
     private GenericsDemo() {
     }
-
     public static void runAll() {
         demonstrateRemoveDuplicates();
         demonstrateLinearSearch();
         demonstrateLargestCircle();
         demonstrateLargestInTwoDimensionalArray();
     }
-
     public static void demonstrateRemoveDuplicates() {
         System.out.println("\n1.1. Удаление дубликатов из ArrayList");
         ArrayList<String> source = new ArrayList<String>(Arrays.asList(
@@ -23,7 +18,6 @@ public final class GenericsDemo {
         System.out.println("Без дубликатов:  "
                 + GenericsTasks.removeDuplicates(source));
     }
-
     public static void demonstrateLinearSearch() {
         System.out.println("\n1.2. Линейный поиск");
         Integer[] numbers = {12, 7, 25, 4, 18, 25};
@@ -35,7 +29,6 @@ public final class GenericsDemo {
         System.out.println("Поиск отсутствующего элемента 99: "
                 + GenericsTasks.linearSearch(numbers, 99));
     }
-
     public static void demonstrateLargestCircle() {
         System.out.println("\n1.3. Поиск круга с наибольшим радиусом");
         Circle[] circles = {
@@ -48,7 +41,6 @@ public final class GenericsDemo {
         System.out.println("Наибольший круг: "
                 + GenericsTasks.findLargest(circles));
     }
-
     public static void demonstrateLargestInTwoDimensionalArray() {
         System.out.println("\n1.4. Поиск максимума в двумерном массиве");
         Integer[][] matrix = {
