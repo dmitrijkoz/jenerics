@@ -1,0 +1,14 @@
+C:\Users\xdemo\Downloads\Practice5\src\practice5\Main.java
+C:\Users\xdemo\Downloads\Practice5\src\practice5\SelfTest.java
+C:\Users\xdemo\Downloads\Practice5\src\practice5\cloning\CloningDemo.java
+C:\Users\xdemo\Downloads\Practice5\src\practice5\cloning\DeepCopyable.java
+C:\Users\xdemo\Downloads\Practice5\src\practice5\cloning\DeepCopyUtils.java
+C:\Users\xdemo\Downloads\Practice5\src\practice5\cloning\House.java
+C:\Users\xdemo\Downloads\Practice5\src\practice5\cloning\MyStack.java
+C:\Users\xdemo\Downloads\Practice5\src\practice5\cloning\MyStackInherited.java
+C:\Users\xdemo\Downloads\Practice5\src\practice5\task1\Circle.java
+C:\Users\xdemo\Downloads\Practice5\src\practice5\task1\GenericsDemo.java
+C:\Users\xdemo\Downloads\Practice5\src\practice5\task1\GenericsTasks.java
+C:\Users\xdemo\Downloads\Practice5\src\practice5\task2\ArrayListStack.java
+C:\Users\xdemo\Downloads\Practice5\src\practice5\task2\GenericStack.java
+C:\Users\xdemo\Downloads\Practice5\src\practice5\task2\StackDemo.java

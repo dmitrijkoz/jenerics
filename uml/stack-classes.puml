@@ -1,0 +1,49 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class GenericStack<E> {
+  - elements: Object[]
+  - size: int
+  + GenericStack()
+  + getSize(): int
+  + isEmpty(): boolean
+  + push(element: E): void
+  + peek(): E
+  + pop(): E
+  + getCapacity(): int
+}
+
+class ArrayListStack<E> {
+  + push(element: E): void
+  + peek(): E
+  + pop(): E
+  + getSize(): int
+}
+
+class MyStack<E> {
+  - list: ArrayList<E>
+  + isEmpty(): boolean
+  + getSize(): int
+  + peek(): E
+  + pop(): E
+  + push(element: E): void
+  + clone(): MyStack<E>
+}
+
+class MyStackInherited<E> {
+  + push(element: E): void
+  + peek(): E
+  + pop(): E
+  + getSize(): int
+}
+
+class ArrayList<E>
+MyStack *-- "1" ArrayList : композиция
+ArrayListStack --|> ArrayList : наследование
+MyStackInherited --|> ArrayList : наследование
+
+note right of GenericStack
+  Внутри используется
+  динамический массив Object[].
+end note
+@enduml

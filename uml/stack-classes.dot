@@ -1,0 +1,16 @@
+digraph UML {
+  graph [rankdir=TB, bgcolor="white", pad="0.30", nodesep="0.55", ranksep="0.75", fontname="Arial", label="UML-диаграмма реализаций стека", labelloc=t, fontsize=20];
+  node [shape=record, style="rounded,filled", color="#4b5563", fontname="Arial", fontsize=10, margin="0.12,0.08"];
+  edge [fontname="Arial", fontsize=9, color="#374151", arrowsize=0.8];
+
+  GenericStack [label="{GenericStack (E)|- elements: Object[]\l- size: int\l|+ push(E): void\l+ peek(): E\l+ pop(): E\l+ getSize(): int\l+ isEmpty(): boolean\l}", fillcolor="#e7f4ff"];
+  ArrayList [label="{ArrayList of E|+ add(E): boolean\l+ get(int): E\l+ remove(int): E\l+ size(): int\l+ isEmpty(): boolean\l}", fillcolor="#e8edf5"];
+  ArrayListStack [label="{ArrayListStack (E)|+ push(E): void\l+ peek(): E\l+ pop(): E\l+ getSize(): int\l}", fillcolor="#eaf7ee"];
+  MyStackComp [label="{MyStack (E)|- list: ArrayList of E\l|+ push(E): void\l+ peek(): E\l+ pop(): E\l+ getSize(): int\l+ clone(): MyStack\l}", fillcolor="#fff5e5"];
+  MyStackInherited [label="{MyStackInherited (E)|+ push(E): void\l+ peek(): E\l+ pop(): E\l+ getSize(): int\l}", fillcolor="#f7eefe"];
+
+  ArrayListStack -> ArrayList [arrowhead=empty, label="наследование"];
+  MyStackInherited -> ArrayList [arrowhead=empty, label="наследование"];
+  MyStackComp -> ArrayList [arrowhead=none, arrowtail=diamond, dir=both, label="композиция", headlabel="1", taillabel="1"];
+  {rank=same; GenericStack; ArrayListStack; MyStackComp; MyStackInherited;}
+}
